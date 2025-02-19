@@ -116,7 +116,7 @@ const MessageList = ({ messages }: Props) => {
                                     </select>
 
                                     <Button onClick={() => handleTranslate(message.id, message.text, message?.detectedLanguage.detectedLanguage)} disabled={!translationSelections[message.id]} className='/w-full'>{loadingStates[message.id] ? "Translating..." : "Translate"}</Button>
-                                    {(message.text.length > 10 && message.detectedLanguage.detectedLanguage == 'en') && <Button variant='outline' className='/w-full'>Summarize</Button>}
+                                    {(message.text.length > 150 && message.detectedLanguage.detectedLanguage == 'en') && <Button variant='outline' className='/w-full' onClick={()=>alert("This feature hasn't been implemented, because the developer doesn't meet his pc specs doesn't meet the requirement to set it up")}>Summarize</Button>}
                                 </div>
 
                                 {error && <p className='text-red-600'>{error}</p>}

@@ -74,7 +74,7 @@ const Home = () => {
     return (
         <>
             <Header />
-            <div className='bg-[#151515]  px-5 md:px-16'>
+            <div className='bg-[#151515]  px-5 md:px-16 lg:px-40'>
                 <ChatArea />
                 <InputArea />
             </div>
