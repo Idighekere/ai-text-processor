@@ -1,0 +1,18 @@
+@import 'tailwindcss';
+/* @import '/fonts/Axiforma-Regular.tff'; */
+
+@theme {
+  --color-primary: #eee; /*#6d28d9*/
+}
+
+@layer {
+  @font-face {
+    font-family: Axiforma Regular;
+
+    src: url('/fonts/Axiforma-Regular.ttf'), local('Axiforma-Regular');
+  }
+}
+
+* {
+  font-family: Axiforma Regular;
+}
