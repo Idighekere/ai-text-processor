@@ -53,6 +53,6 @@ export const getLanguageName = (code: string) => {
         case 'ar-Latn':
             return 'Romanized Arabic'
         default:
-            return 'Unknown Language';
+            return code
     }
 }

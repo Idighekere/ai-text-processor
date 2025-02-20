@@ -13,7 +13,7 @@ const Button = ({ children, variant = "primary", className, type = "button", onC
     let buttonStyles = ''
     switch (variant) {
         case 'primary':
-            buttonStyles = ' bg-primary disabled:bg-primary/90 text-black'
+            buttonStyles = ' bg-primary disabled:bg-gray-400 text-black'
             break;
         case 'outline':
             buttonStyles = 'border-primary border text-primary-green'
@@ -27,7 +27,7 @@ const Button = ({ children, variant = "primary", className, type = "button", onC
 
 
     return (
-        <button className={`${buttonStyles} ${className} px-4 py-1 rounded-md cursor-pointer disabled:cursor-not-allowed`} type={type} onClick={onClick} disabled={disabled} >{children}</button>
+        <button className={`${buttonStyles} ${className} px-4 py-2 rounded-md cursor-pointer disabled:cursor-not-allowed`} type={type} onClick={onClick} disabled={disabled} >{children}</button>
     )
 }
 

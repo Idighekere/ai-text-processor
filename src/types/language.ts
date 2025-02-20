@@ -17,7 +17,7 @@ export interface TranslationResult {
 
 export interface SummaryResult {
     summary: string;
-    type: 'key-points' | 'tldr' | 'teaser' | 'headline';
+    // type: 'key-points' | 'tldr' | 'teaser' | 'headline';
 }
 
 export interface Message {
@@ -25,7 +25,7 @@ export interface Message {
     text: string;
     detectedLanguage: LanguageDetectionResult;
     translatedText?: string;
-    // summary: SummaryResult | null;
+    summary: string;
 }
 
 
@@ -42,20 +42,23 @@ export interface LanguageState {
     messages: Message[];
 
     // Status states
-    isLoading: boolean;
-    error: string | null;
+    isLoading: { [key: number]: boolean };
+    errors: { [key: number]: null | string };
 
 }
 
 export interface LanguageAction {
     // Actions
     addMessage?: (text: string, detectedLanguage?: LanguageDetectionResult) => void;
-    updateMessage: (id: number, text: string) => void;
+    addTranslatedText: (id: number, text: string) => void;
+    addSummarizedText: (id: number, text: string) => void;
+
     // setTargetLanguage: (lang: string) => void;
     setDownloadProgress: (progress: DownloadProgress) => void;
-    detectLanguage: (text: string) => Promise<LanguageDetectionResult | undefined>;
-    translate: (text: string, source: string, target: string) => Promise<string>;
-    summarize?: (text: string) => Promise<void>;
+    detectLanguage: (id: number, text: string) => Promise<LanguageDetectionResult | undefined>;
+    translate: (id: number, text: string, source: string, target: string) => Promise<string>;
+    summarize?: (id: number, text: string) => Promise<string>;
     clearError: () => void;
+    setError?: (id: number, error: string) => void;
     setMessage?: (message: Partial<Message>) => void
 }

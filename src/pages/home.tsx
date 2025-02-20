@@ -72,13 +72,13 @@ const Home = () => {
     // }, [])
 
     return (
-        <>
+        <div className='pb-30 bg-[#151515]'>
             <Header />
-            <div className='bg-[#151515]  px-5 md:px-16 lg:px-40'>
+            <div className='  px-5 md:px-16 lg:px-30 /h-screen '>
                 <ChatArea />
                 <InputArea />
             </div>
-        </>
+        </div>
     )
 }
 

@@ -54,7 +54,7 @@ interface SummarizeOptions {
 }
 
 interface Summarizer {
-    summarize: (text: string, options?: SummarizeOptions) => Promise<string>;
+    summarize: (text: string, options?: SummarizerOptions) => Promise<string>;
     ready: Promise<void>;
 }
 

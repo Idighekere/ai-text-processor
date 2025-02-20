@@ -7,7 +7,7 @@ const ChatArea = () => {
 
 
     return (
-        <div className='bg-blacgk h-[] /mb-20 /overflow-y-auto text-white w-full '>
+        <div className=' h-[] /mb-20 /overflow-y-auto text-white min-h-screen pb-27 '>
 
             {/* <p>{outputText}</p> */}
             <MessageList messages={messages} />
