@@ -96,8 +96,8 @@ const MessageList = ({ messages }: Props) => {
         <div className=" w-full /h-screen /max-h-[800px] flex flex-col /bg-[#333]   pt-4">
             {/* Message List */}
             <div className="flex-1 /overflow-y-auto space-y-6 /p-4">
-                {messages.length == 0 && (<div className='justify-center h-screen flex items-center /mt-[50%] md:mt-10'>
-                    <p className='text-center text-3xl font-bold my-3'>What can I translate for you?</p>
+                {messages.length == 0 && (<div className='justify-center /h-screen flex items-center mt-[50%] md:mt-[20%]'>
+                    <p className='text-center text-3xl md:text-4xl lg:text-5xl font-bold my-3'>What can I translate for you?</p>
                 </div>)}
                 {messages?.map((message: Message) => (
                     <div key={message.id} className="w-full  /md:w-[60%] md:flex flex-col space-y-6  /bg-[#212121] rounded-lg /p-5 justify-center items-center ">

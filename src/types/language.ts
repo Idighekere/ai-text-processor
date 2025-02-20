@@ -49,7 +49,7 @@ export interface LanguageState {
 
 export interface LanguageAction {
     // Actions
-    addMessage?: (text: string, detectedLanguage?: LanguageDetectionResult) => void;
+    addMessage?: (id: number, text: string, detectedLanguage?: LanguageDetectionResult) => void;
     addTranslatedText: (id: number, text: string) => void;
     addSummarizedText: (id: number, text: string) => void;
 
@@ -59,6 +59,7 @@ export interface LanguageAction {
     translate: (id: number, text: string, source: string, target: string) => Promise<string>;
     summarize?: (id: number, text: string) => Promise<string>;
     clearError: () => void;
+    clearChats?: () => void
     setError?: (id: number, error: string) => void;
     setMessage?: (message: Partial<Message>) => void
 }

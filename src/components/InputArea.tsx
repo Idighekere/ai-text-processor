@@ -11,8 +11,9 @@ const InputArea = () => {
     const handleSend = async () => {
         if (!input.trim()) return;
 
-        const detectedLanguage = await detectLanguage(input)
-        addMessage?.(input, detectedLanguage)
+        const id = Date.now()
+        const detectedLanguage = await detectLanguage(id, input)
+        addMessage?.(id, input, detectedLanguage)
         setInput('')
     }
     return (

@@ -27,14 +27,15 @@ const useTextStore = create<LanguageAction & LanguageState>()(persist((set, get)
     })),
     setDownloadProgress: (progress) => set({ downloadProgress: progress }),
 
-    addMessage: (text, detectedLanguage) => {
+    addMessage: (id, text, detectedLanguage) => {
         // const detectedLanguage = get().detectedLanguage
 
         set((state) => ({
-            messages: [...state.messages, { id: Date.now(), text, detectedLanguage, translatedText: '', summary: "" }]
+            messages: [...state.messages, { id, text, detectedLanguage, translatedText: '', summary: "" }]
         }))
 
     },
+    clearChats: () => set({ messages: [] }),
     addTranslatedText: (id, translatedText) => {
 
         return set((state) => ({
